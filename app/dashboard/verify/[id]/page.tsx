@@ -108,7 +108,7 @@ export default function UserProfilePage({
           <div className="w-full">
             <p className="mb-2">
               <strong className="font-normal">Hostal:</strong>{" "}
-              <span className="text-[#1890FF] font-medium">{user.hostal}</span>
+              <span className="text-[#1890FF] font-medium">{user.hostel}</span>
             </p>
             <p className="mb-2">
               <strong className="font-normal">Room No:</strong>{" "}
