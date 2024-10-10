@@ -10,6 +10,7 @@ import {
   DollarSign,
   LogOut,
   ClipboardList,
+  BadgeCheck,
 } from "lucide-react";
 
 
@@ -20,6 +21,7 @@ import Logo from "@/logo";
 
 const navItems = [
   { icon: Home, label: "Dashboard", href: "/dashboard" },
+  { icon: BadgeCheck, label: "Verify", href: "/dashboard/verify" },
   { icon: FileText, label: "Notices", href: "/dashboard/notices" },
   { icon: Users, label: "Students", href: "/dashboard/students" },
   { icon: ClipboardList, label: "Applications", href: "/dashboard/applications" },
