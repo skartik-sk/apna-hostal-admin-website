@@ -57,7 +57,7 @@ export default async function Fine ({id}:{id:string}) {
     return (
         <>
 
-      <h1 className="text-xl font-medium text-gray-800 mb-6">Application status</h1>
+      <h1 className="text-xl font-medium text-gray-800 mb-6">Fine status</h1>
 
       <div className='w-full '>
        {Fine.map((application) => (
