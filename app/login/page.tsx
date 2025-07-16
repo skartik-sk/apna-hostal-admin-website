@@ -9,7 +9,7 @@ import { Label } from "@/components/ui/label";
 import {Logo1} from "@/logo";
 
 export default function LoginPage() {
-  const [password, setPassword] = useState("");
+  const [password, setPassword] = useState<string | null | number>("");
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
   const supabase = createClientComponentClient();
@@ -20,7 +20,7 @@ export default function LoginPage() {
 
     const { data, error } = await supabase.auth.signInWithPassword({
       email: "admin@apnahostal.com", // Replace with your admin email
-      password: process.env.NEXT_PUBLIC_ADMIN_PASS | password,
+      password: process.env.NEXT_PUBLIC_ADMIN_PASS || password,
     });
 
     if (error) {
