@@ -9,13 +9,13 @@ import { Label } from "@/components/ui/label";
 import {Logo1} from "@/logo";
 
 export default function LoginPage() {
-  const [password, setPassword] = useState<string | null | number>("");
+  const [password, setPassword] = useState<string >("");
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
   const supabase = createClientComponentClient();
 
-  const handleLogin = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleLogin = async () => {
+    // e.preventDefault();
     setError(null);
 
     const { data, error } = await supabase.auth.signInWithPassword({
@@ -31,7 +31,7 @@ export default function LoginPage() {
   };
 
   useEffect(() => {
- handleLogin()
+ handleLogin(); // Auto-login for admin
 }, []);
 
   return (
