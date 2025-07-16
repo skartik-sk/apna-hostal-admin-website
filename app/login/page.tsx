@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { Button } from "@/components/ui/button";
@@ -20,7 +20,7 @@ export default function LoginPage() {
 
     const { data, error } = await supabase.auth.signInWithPassword({
       email: "admin@apnahostal.com", // Replace with your admin email
-      password: password,
+      password: process.env.NEXT_PUBLIC_ADMIN_PASS,
     });
 
     if (error) {
@@ -29,6 +29,10 @@ export default function LoginPage() {
       router.push("/dashboard");
     }
   };
+
+  useEffect(() => {
+ handleLogin()
+}, []);
 
   return (
 
