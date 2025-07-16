@@ -20,7 +20,7 @@ export default function LoginPage() {
 
     const { data, error } = await supabase.auth.signInWithPassword({
       email: "admin@apnahostal.com", // Replace with your admin email
-      password: process.env.NEXT_PUBLIC_ADMIN_PASS,
+      password: process.env.NEXT_PUBLIC_ADMIN_PASS | password,
     });
 
     if (error) {
